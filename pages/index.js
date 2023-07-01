@@ -7,18 +7,19 @@ export default function Home(props) {
 }
 
 export const getStaticProps = async () => {
-  const {data}  = await client.query({
+  const { data } = await client.query({
     query: gql`
       query NewQuery {
-        pages {
-          nodes {
-            title
+        nodeByUri(uri: "/") {
+          ... on Page {
+            id
+            blocks
           }
         }
       }
     `,
   });
   return {
-    props: {data},
+    props: { blocks: data.nodeByUri.blocks },
   };
 };
