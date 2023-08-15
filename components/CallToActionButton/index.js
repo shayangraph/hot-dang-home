@@ -1,1 +1,1 @@
-import { CallToActionButton } from "./CallToActionButton";
+export * from './CallToActionButton'

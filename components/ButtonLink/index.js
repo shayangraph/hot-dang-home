@@ -1,1 +1,1 @@
-import {ButtonLink} from './buttonLink'
+export * from './ButtonLink'

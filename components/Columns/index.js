@@ -1,1 +1,1 @@
-import { Columns } from "./Columns";
+export * from './Columns'

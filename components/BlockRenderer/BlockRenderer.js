@@ -1,9 +1,10 @@
-import { CallToActionButton } from "components/CallToActionButton/CallToActionButton";
-import { Column } from "components/Column/Column";
-import { Columns } from "components/Columns/Columns";
+import { CallToActionButton } from "components/CallToActionButton";
+import { Column } from "components/Column";
+import { Columns } from "components/Columns";
 import { Cover } from "components/Cover";
 import { Heading } from "components/Heading";
-import { Paragraph } from "components/Paragraph/Paragraph";
+import { Paragraph } from "components/Paragraph";
+import { PropertySearch } from "components/PropertySearch";
 import Image from "next/image";
 import { theme } from "theme";
 
@@ -70,21 +71,13 @@ export const BlockRenderer = ({ blocks }) => {
           />
         );
       }
+      case "core/post-title":
       case "core/heading": {
         return (
           <Heading
             key={block.id}
             level={block.attributes.level}
             content={block.attributes.content}
-            textAlign={block.attributes.textAlign}
-          />
-        );
-      }
-      case "core/post-title": {
-        return (
-          <PostTitle
-            key={block.id}
-            level={block.attributes.level}
             textAlign={block.attributes.textAlign}
           />
         );

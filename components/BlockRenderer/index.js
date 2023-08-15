@@ -1,1 +1,1 @@
-export { BlockRenderer } from "./BlockRenderer";
+export * from "./BlockRenderer";

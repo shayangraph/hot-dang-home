@@ -1,4 +1,4 @@
-import { ButtonLink } from "components/ButtonLink/buttonLink";
+import { ButtonLink } from "components/ButtonLink";
 import Link from "next/link";
 import { FaHouseUser, FaHeart } from "react-icons/fa";
 
