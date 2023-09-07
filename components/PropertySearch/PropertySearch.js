@@ -21,17 +21,17 @@ export const PropertySearch = () => {
     if (maxPrice) {
       filters.maxPrice = parseInt(maxPrice);
     }
-    if (hasParking === true) {
+    if (hasParking === "true") {
       filters.hasParking = true;
     }
-    if (petFriendly === true) {
+    if (petFriendly === "true") {
       filters.petFriendly = true;
     }
     const res = await fetch("/api/search", {
       method: "POST",
       body: JSON.stringify({
         page: parseInt(page || "1"),
-        ...filters
+        ...filters,
       }),
     });
     const data = await res.json();
@@ -41,8 +41,16 @@ export const PropertySearch = () => {
   };
 
   const handlePageClick = async (pageNumber) => {
+    const { petFriendly, hasParking, minPrice, maxPrice } = queryString.parse(
+      window.location.search
+    );
+
     await router.push(
-      `${router.query.slug.join("/")}?page=${pageNumber}`,
+      `${router.query.slug.join("/")}?page=${pageNumber}&petFriendly=${
+        petFriendly == "true"
+      }&hasParking=${
+        hasParking == "true"
+      }&minPrice=${minPrice}&maxPrice=${maxPrice}`,
       null,
       {
         shallow: true,
@@ -72,6 +80,7 @@ export const PropertySearch = () => {
         shallow: true,
       }
     );
+    search();
   };
 
   return (

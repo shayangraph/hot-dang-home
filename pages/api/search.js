@@ -28,7 +28,7 @@ const handler = async (req, res) => {
       minPriceFilter = `{
         key:"price"
         compare:GREATER_THAN_OR_EQUAL_TO
-        value:${filters.minPrice}
+        value:"${filters.minPrice}"
         type:NUMERIC
       },`;
     }
@@ -36,7 +36,7 @@ const handler = async (req, res) => {
       maxPriceFilter = `{
         key:"price"
         compare:LESS_THAN_OR_EQUAL_TO
-        value:${filters.maxPrice}
+        value:"${filters.maxPrice}"
         type:NUMERIC
       },`;
     }
