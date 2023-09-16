@@ -3,6 +3,7 @@ import { Column } from "components/Column";
 import { Columns } from "components/Columns";
 import { Cover } from "components/Cover";
 import { FormspreeFrom } from "components/FormspreeForm";
+import { Gallery } from "components/Gallery";
 import { Heading } from "components/Heading";
 import { Paragraph } from "components/Paragraph";
 import { PropertySearch } from "components/PropertySearch";
@@ -17,18 +18,7 @@ export const BlockRenderer = ({ blocks }) => {
           <FormspreeFrom key={block.id} formId={block.attributes.data.form_id} />
         );
       }
-      case "acf/propertyfeatures": {
-        return (
-          <PropertyFeatures
-            key={block.id}
-            price={block.attributes.price}
-            bathrooms={block.attributes.bathrooms}
-            bedrooms={block.attributes.bedrooms}
-            hasParking={block.attributes.has_parking}
-            petFriendly={block.attributes.pet_friendly}
-          />
-        );
-      }
+      
       case "acf/tickitem": {
         return (
           <TickItem key={block.id}>
