@@ -7,7 +7,7 @@ export const Gallery = ({ items, cropImages, columns }) => {
   if (cropImages) {
     items.forEach((item) => {
       if (item.attributes.height > maxHeight) {
-        maxHeight = item.attributes.height;
+         maxHeight = item.attributes.height;
       }
       if (item.attributes.width > maxWidth) {
         maxWidth = item.attributes.width;

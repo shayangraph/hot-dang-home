@@ -7,6 +7,7 @@ import { Gallery } from "components/Gallery";
 import { Heading } from "components/Heading";
 import { Paragraph } from "components/Paragraph";
 import { PropertySearch } from "components/PropertySearch";
+import { TickItem } from "components/TickItem";
 import Image from "next/image";
 import { theme } from "theme";
 
@@ -15,10 +16,13 @@ export const BlockRenderer = ({ blocks }) => {
     switch (block.name) {
       case "acf/formspreeform": {
         return (
-          <FormspreeFrom key={block.id} formId={block.attributes.data.form_id} />
+          <FormspreeFrom
+            key={block.id}
+            formId={block.attributes.data.form_id}
+          />
         );
       }
-      
+
       case "acf/tickitem": {
         return (
           <TickItem key={block.id}>
@@ -91,7 +95,7 @@ export const BlockRenderer = ({ blocks }) => {
             textColor={
               theme[block.attributes.textColor] ||
               block.attributes.style?.color?.text
-            }
+            } 
             backgroundColor={
               theme[block.attributes.backgroundColor] ||
               block.attributes.style?.color?.background
