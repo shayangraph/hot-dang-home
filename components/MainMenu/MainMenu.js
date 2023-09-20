@@ -7,7 +7,6 @@ export const MainMenu = ({
   callToActionDestination,
   callToActionLabel,
 }) => {
-  console.log("MAIN MENU: ", items);
   return (
     <div className="bg-slate-800 text-white px-5 h-[64px] sticky top-0 z-20 flex">
       <div className="py-4 pl-5 flex text-pink-600">

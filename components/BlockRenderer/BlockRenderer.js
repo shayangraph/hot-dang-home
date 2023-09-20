@@ -79,7 +79,6 @@ export const BlockRenderer = ({ blocks }) => {
         return <PropertySearch key={block.id} />;
       }
       case "core/cover": {
-        console.log("COVER BLOCK: ", block);
         return (
           <Cover key={block.id} background={block.attributes.url}>
             <BlockRenderer blocks={block.innerBlocks} />
@@ -87,7 +86,6 @@ export const BlockRenderer = ({ blocks }) => {
         );
       }
       case "core/columns": {
-        console.log("COLUMNS: ", block.attributes);
         return (
           <Columns
             key={block.id}
